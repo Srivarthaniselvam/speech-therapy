@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Feedback Form with Cards</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <div class="top-bar-1">
+      <a href="/patient/profile">Profile</a>
+      <a href="/patient/find-therapist">Find Therapists</a>
+      <a href="/patient/appointments">My Appointments</a>
+      <a href="/patient/reports">My Reports</a>
+      <a href="/patient/exercises">My Exercises</a>
+      <a href="/feedback">Feedback</a>
+      <a href="/">Logout</a>
+    </div>
+
+    <div class="feedback-container">
+      <h1 class="animate-heading">Patient Feedback Form</h1>
+      <p class="animate-text">
+        We value your feedback to improve our services.
+      </p>
+
+      <form action="/submit-feedback" method="POST">
+        <!-- Card: Personal Information -->
+        <div class="card">
+          <h2>Your Information</h2>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Full Name"
+            required
+          /><br />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email Address"
+            required
+          /><br />
+        </div>
+
+        <!-- Card: Experience Rating -->
+        <div class="card">
+          <h2>Overall Experience</h2>
+          <p>Rate your overall experience:</p>
+          <div class="rating">
+            <input
+              type="radio"
+              id="excellent"
+              name="experience"
+              value="5"
+              required
+            />
+            <label for="excellent">Excellent</label>
+
+            <input type="radio" id="good" name="experience" value="4" />
+            <label for="good">Good</label>
+
+            <input type="radio" id="average" name="experience" value="3" />
+            <label for="average">Average</label>
+
+            <input type="radio" id="poor" name="experience" value="2" />
+            <label for="poor">Poor</label>
+
+            <input type="radio" id="very-poor" name="experience" value="1" />
+            <label for="very-poor">Very Poor</label>
+          </div>
+        </div>
+
+        <!-- Card: Services Used -->
+        <div class="card">
+          <h2>Services You Used</h2>
+          <p>Select the services you received:</p>
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="consultation"
+              name="services"
+              value="consultation"
+            />
+            <label for="consultation">Consultation</label>
+
+            <input
+              type="checkbox"
+              id="therapy"
+              name="services"
+              value="therapy"
+            />
+            <label for="therapy">Therapy</label>
+
+            <input
+              type="checkbox"
+              id="medication"
+              name="services"
+              value="medication"
+            />
+            <label for="medication">Medication</label>
+
+            <input
+              type="checkbox"
+              id="follow-up"
+              name="services"
+              value="follow-up"
+            />
+            <label for="follow-up">Follow-Up</label>
+          </div>
+        </div>
+
+        <!-- Card: Detailed Rating -->
+        <div class="card">
+          <h2>Rate the Following Aspects</h2>
+
+          <label for="staff-rating">Staff Behavior:</label>
+          <div class="rating">
+            <input
+              type="radio"
+              id="staff-1"
+              name="staff-rating"
+              value="1"
+              required
+            />
+            1
+            <input type="radio" id="staff-2" name="staff-rating" value="2" /> 2
+            <input type="radio" id="staff-3" name="staff-rating" value="3" /> 3
+            <input type="radio" id="staff-4" name="staff-rating" value="4" /> 4
+            <input type="radio" id="staff-5" name="staff-rating" value="5" /> 5
+          </div>
+          <br />
+
+          <label for="cleanliness-rating">Facility Cleanliness:</label>
+          <div class="rating">
+            <input
+              type="radio"
+              id="clean-1"
+              name="cleanliness-rating"
+              value="1"
+              required
+            />
+            1
+            <input
+              type="radio"
+              id="clean-2"
+              name="cleanliness-rating"
+              value="2"
+            />
+            2
+            <input
+              type="radio"
+              id="clean-3"
+              name="cleanliness-rating"
+              value="3"
+            />
+            3
+            <input
+              type="radio"
+              id="clean-4"
+              name="cleanliness-rating"
+              value="4"
+            />
+            4
+            <input
+              type="radio"
+              id="clean-5"
+              name="cleanliness-rating"
+              value="5"
+            />
+            5
+          </div>
+          <br />
+
+          <label for="wait-time-rating">Waiting Time:</label>
+          <div class="rating">
+            <input
+              type="radio"
+              id="wait-1"
+              name="wait-time-rating"
+              value="1"
+              required
+            />
+            1
+            <input type="radio" id="wait-2" name="wait-time-rating" value="2" />
+            2
+            <input type="radio" id="wait-3" name="wait-time-rating" value="3" />
+            3
+            <input type="radio" id="wait-4" name="wait-time-rating" value="4" />
+            4
+            <input type="radio" id="wait-5" name="wait-time-rating" value="5" />
+            5
+          </div>
+        </div>
+
+        <!-- Card: Additional Comments -->
+        <div class="card">
+          <h2>Additional Comments</h2>
+          <label for="comments">Any suggestions or areas for improvement?</label
+          ><br />
+          <textarea
+            id="comments"
+            name="comments"
+            rows="5"
+            placeholder="Your feedback..."
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Home</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body class="profile-body">
+    <!-- Top bar navigation -->
+    <div class="top-bar-1">
+      <a href="/patient-dashboard">Home</a>
+      <a href="/patient/find-therapist">Find Therapists</a>
+      <a href="/patient/appointments">My Appointments</a>
+      <a href="/patient/reports">My Reports</a>
+      <a href="/patient/exercises">My Exercises</a>
+      <a href="/feedback">Feedback</a>
+      <a href="/logout">Logout</a>
+
+      <!-- Profile logo button next to Logout (uses image) -->
+      <button class="top-profile-btn" onclick="toggleProfileCard()">
+        <img
+          src="../static/images/profile.png"
+          alt="Profile"
+          class="top-profile-img"
+        />
+      </button>
+    </div>
+
+    <!-- Small bubble menu like 2nd pic -->
+    <div id="top-profile-menu" class="top-profile-menu hidden">
+      <button title="Language">🌐</button>
+      <button title="Dark mode">🌙</button>
+      <button title="Notifications" class="notif-btn">
+        🔔
+        <span class="notif-badge">25</span>
+      </button>
+    </div>
+
+    <!-- Optional overlay profile card -->
+    <div id="profile-card" class="profile-card-wrapper hidden">
+      <div class="profile-card">
+        <div class="profile-card-header">
+          <div class="profile-user">
+            <img
+              src="../static/images/profile.png"
+              alt="User"
+              class="profile-avatar"
+            />
+            <div>
+              <div class="profile-name">User name</div>
+              <div class="profile-email">user@example.com</div>
+            </div>
+          </div>
+          <button class="profile-close" onclick="toggleProfileCard()">×</button>
+        </div>
+
+        <div class="profile-card-body">
+          <div class="profile-row">
+            <span>Name</span>
+            <span>Your name</span>
+          </div>
+          <div class="profile-row">
+            <span>Email account</span>
+            <span>user@example.com</span>
+          </div>
+          <div class="profile-row">
+            <span>Mobile number</span>
+            <span>Add number</span>
+          </div>
+          <div class="profile-row">
+            <span>Location</span>
+            <span>India</span>
+          </div>
+        </div>
+
+        <div class="profile-card-footer">
+          <a href="/patient-dashboard" class="profile-primary-btn">Home</a>
+          <a href="/logout" class="profile-secondary-link">Log out</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simple home content, no profile form -->
+    <div class="container-signup">
+      <h2>Welcome, Patient</h2>
+      <p>
+        Use the menu above to manage your therapists, appointments, reports, and
+        exercises.
+      </p>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

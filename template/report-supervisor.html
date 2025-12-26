@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body class="profile-body">
+    <div class="top-bar-3">
+      <a href="/supervisor/profile">Profile</a>
+      <a href="/supervisor/therapists">Therapist's Report</a>
+      <a href="/supervisor/reports">Reports</a>
+      <a href="/">Logout</a>
+    </div>
+
+    <div class="container-signup">
+      <h2>Profile</h2>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" id="age" placeholder="Enter your age" />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" placeholder="Enter your mobile number" />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" placeholder="Enter your address"></textarea>
+      </div>
+
+      <div id="supervisor-fields">
+        <div class="form-group">
+          <label for="specialization">Specialization:</label>
+          <input
+            type="text"
+            id="specialization"
+            placeholder="Enter your specialization"
+          />
+        </div>
+        <div class="form-group">
+          <label for="feedback">Name of Institution:</label>
+          <textarea
+            id="feedback"
+            placeholder="Enter Institution Name"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="certificates">Upload Certificates:</label>
+        <input type="file" id="certificates" />
+      </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

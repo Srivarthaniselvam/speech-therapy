@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../static/css/exercises_the.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body class="profile-body">
+    <div class="top-bar-1">
+      <a href="/patient/profile">Profile</a>
+      <a href="/patient/find-therapist">Find Therapists</a>
+      <a href="/patient/appointments">My Appointments</a>
+      <a href="/patient/reports">My Reports</a>
+      <a href="/patient/exercises">My Exercises</a>
+      <a href="/feedback">Feedback</a>
+      <a href="/">Logout</a>
+    </div>
+    <br /><br />
+    <button id="Its4alreadyy">Begin Practicing</button>
+
+    <!-- Modal Structure -->
+    <div id="I_am_sooo_tired" class="I_am_sleepy">
+      <div class="Creepy_content">
+        <span class="I_wanna_sleep">&times;</span>
+        <h2>Set Your Practice Timer</h2>
+
+        <!-- Timer Input -->
+        <label for="plzGiveMeTime">Enter time in minutes:</label>
+        <input
+          id="plzGiveMeTime"
+          type="number"
+          placeholder="Set time in minutes"
+        />
+
+        <!-- Search Input -->
+        <label for="IneedToSearch">Search for practice material:</label>
+        <input id="IneedToSearch" type="search" placeholder="Search..." />
+
+        <!-- Start Timer Button -->
+        <button class="Timer_Start" id="ICantKeepMyEyesOpen">
+          Start Timer
+        </button>
+
+        <!-- Timer Display -->
+        <div id="Timer_display"></div>
+      </div>
+    </div>
+
+    <!-- exercisesss advised by the therapists -->
+    <div id="loll">
+      <h3>Exercises you need to do:</h3>
+      <ul id="Iloll" class="loll" style="width: 375px">
+        <li>Tongue In-and-Outs</li>
+        <li>Side-to-Side Tongue Movements</li>
+        <li>Sentence Production</li>
+        <li>Consonant &amp; Vowel Pairing Repetition</li>
+      </ul>
+    </div>
+
+    <div class="hahaha">Tongue &amp; Lip Exercises</div>
+    <div class="Ineedfood">
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Tongue In-and-Outs</div>
+        <div class="Ihateittt NoIDont" style="padding: 0 20px 0 20px">
+          Stick the tongue out as far as possible and hold it for 2 seconds,
+          then pull it back in. Hold for 2 seconds, and repeat. This helps train
+          the tongue to move in coordinated patterns, which will help improve
+          speech production.
+        </div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Side-to-Side Tongue Movements</div>
+        <div class="Ihateittt NoIDont" style="padding: 0 20px 0 20px">
+          For this speech therapy exercise, open the mouth and move the tongue
+          to touch the right corner of your mouth. Hold for 2 seconds, then
+          touch the left corner of the mouth. Hold for 2 seconds, and repeat.
+        </div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Up-and-Down Tongue Movements</div>
+        <div class="Ihateittt NoIDont" style="padding: 0 20px 0 20px">
+          Open the mouth and stick out the tongue. Then, reach the tongue up
+          toward the nose. Hold for 2 seconds, then reach the tongue down toward
+          the chin. Hold for 2 seconds, and repeat.
+        </div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Lip Puckers</div>
+        <div class="Ihateittt NoIDont" style="padding: 0 20px 0 20px">
+          Start with the mouth relaxed. Then, pucker the lips together as if
+          kissing, holding this position for 2 seconds. Relax for 2 seconds, and
+          repeat. For an extra challenge in motor precision and control,
+          practice puckering as slowly as possible.
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="hahaha">Speaking &amp; Verbalization</div>
+    <div class="Ineedfood">
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">
+          Consonant &amp; Vowel Pairing Repetition
+        </div>
+        <div
+          class="Ihateittt NoIDont"
+          style="padding: 0 20px 0 20px; font-size: 23px"
+        >
+          Start by writing down which consonants are difficult to speak. Then,
+          one at a time, pair each of these consonants with each of the 5 vowels
+          (a, e, i, o, u). For example, those who have trouble with the “r”
+          sound can practice saying “ra, re, ri, ro, ru” repetitively. For an
+          extra challenge, try this with all of the consonants.
+        </div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Sentence Production</div>
+        <div
+          class="Ihateittt NoIDont"
+          style="padding: 0 20px 0 20px; font-size: 21px"
+        >
+          Disorders such as apraxia of speech have no trouble with the cognitive
+          components of language production. However, their ability to move the
+          lips and tongue is impaired. Therefore, reading aloud can provide
+          those with apraxia of speech an opportunity to practice speaking.
+          While this is also an excellent exercise for individuals with aphasia,
+        </div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Phonological Processing</div>
+        <div
+          class="Ihateittt NoIDont"
+          style="padding: 0 20px 0 20px; font-size: 21px"
+        >
+          For this exercise, ask a family member or caregiver to state various
+          words. Then guess how many syllables are in each word they say. Family
+          members or caregiver should always give feedback as to whether the
+          answer was correct or incorrect. The feedback is an essential part of
+          what makes this exercise therapeutic.
+        </div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Mirror practice</div>
+        <div class="Ihateittt NoIDont" style="padding: 0 20px 0 20px">
+          Stand in front of a mirror and say the sounds you are struggling with.
+          Focus on making the correct mouth and tongue movements.
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="hahaha">Tongue Exercises</div>
+    <div class="Ineedfood">
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Front Side 1</div>
+        <div class="Ihateittt NoIDont">Back Side 1</div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Front Side 1</div>
+        <div class="Ihateittt NoIDont">Back Side 1</div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Front Side 1</div>
+        <div class="Ihateittt NoIDont">Back Side 1</div>
+      </div>
+
+      <div class="IamHungry">
+        <div class="Ihateittt Ilovetoeat">Front Side 1</div>
+        <div class="Ihateittt NoIDont">Back Side 1</div>
+      </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+
+    <script>
+      const modal = document.getElementById("I_am_sooo_tired");
+      const btn = document.getElementById("Its4alreadyy");
+      const closeBtn = document.getElementsByClassName("I_wanna_sleep")[0];
+      const startBtn = document.getElementById("ICantKeepMyEyesOpen");
+      const timerDisplay = document.getElementById("Timer_display");
+
+      let timer;
+
+      // Open modal on button click
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      // Close modal when the close button is clicked
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+        clearInterval(timer);
+        timerDisplay.textContent = "";
+      };
+
+      // Close modal if clicked outside the modal content
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          clearInterval(timer);
+          timerDisplay.textContent = "";
+        }
+      };
+
+      // Timer logic when start button is clicked
+      startBtn.onclick = function () {
+        const minutes = parseInt(
+          document.getElementById("plzGiveMeTime").value
+        );
+
+        if (isNaN(minutes) || minutes <= 0) {
+          timerDisplay.textContent = "Please enter a valid time!";
+          return;
+        }
+
+        let timeLeft = minutes * 60; // seconds
+        clearInterval(timer);
+
+        timer = setInterval(function () {
+          const minutesDisplay = Math.floor(timeLeft / 60);
+          const secondsDisplay = timeLeft % 60;
+          timerDisplay.textContent = `${minutesDisplay}m ${secondsDisplay}s remaining`;
+
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            timerDisplay.textContent = "Time's up!";
+          }
+
+          timeLeft--;
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>

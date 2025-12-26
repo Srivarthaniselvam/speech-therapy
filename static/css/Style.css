@@ -1,0 +1,1445 @@
+/* ================================
+   GLOBAL UI FOUNDATION
+   Hashira-inspired Dark Theme
+================================ */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Root Variables */
+:root {
+  --bg-main: #0b0d14;
+  --bg-secondary: #121622;
+  --bg-card: #171b2b;
+
+  --primary: #6c72ff;
+  --primary-hover: #5a60e0;
+
+  --text-main: #ffffff;
+  --text-muted: #a0a3bd;
+
+  --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Body – default for most pages */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Generic Buttons */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Generic containers and cards */
+.container {
+  padding: 24px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ================================
+   TOP BARS FOR DASHBOARDS
+================================ */
+
+.top-bar-1,
+.top-bar-2,
+.top-bar-3 {
+  height: 70px;
+  background-color: #3e1157;
+  color: #fff;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+/* patient: 7 links + 1 profile icon */
+.top-bar-1 { grid-template-columns: repeat(8, 1fr); }
+/* therapist: 4 links + 1 logout + 1 profile icon */
+.top-bar-2 { grid-template-columns: repeat(6, 1fr); }
+/* supervisor: 3 links + 1 logout + 1 profile icon */
+.top-bar-3 { grid-template-columns: repeat(5, 1fr); }
+
+/* Appointments / inventory layout */
+.appointment-management {
+  border: solid 2px;
+}
+
+.container {
+  padding-top: 40px;
+  margin-top: 40px;
+  align-self: center;
+  align-content: center;
+  justify-content: space-between;
+  width: 1200px;
+  column-gap: 75px;
+  row-gap: 60px;
+}
+
+.inventory-dashboard {
+  font-size: 14px;
+  background-color: #fff;
+  grid-column: 2/3;
+  align-items: start;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.upcoming-appointments,
+.past-appointments {
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 100px;
+}
+
+td,
+th {
+  text-align: center;
+}
+
+/* Tables */
+.table-head {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #f4f4f4;
+  padding: 5px;
+  font-size: 20px;
+  margin: 0;
+}
+
+.appointment-button,
+.cancel-button {
+  color: #000;
+  border-radius: 100px;
+  background-color: #fff;
+  border: #7b1fa2 solid 2px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.appointment-button:hover,
+.cancel-button:hover {
+  color: #fff;
+  background-color: #7b1fa2;
+  border: #7b1fa2 solid 2px;
+}
+
+/* Dialog box */
+.dialog {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  height: 400px;
+  width: 70%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow-y: hidden;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead th {
+  background-color: #d1c4e9;
+  padding: 10px;
+}
+
+td,
+th {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.time {
+  background-color: #d1c4e9;
+}
+
+.available {
+  background-color: green;
+  cursor: pointer;
+  color: #fff;
+}
+
+.unavailable {
+  background-color: red;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+.selected {
+  background-color: green;
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3e1157;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* ================================
+   FEEDBACK PAGE
+================================ */
+
+.feedback-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2s ease-in-out;
+  color: #111827;
+}
+
+.feedback-container h1 {
+  color: #673ab7;
+  animation: slideDown 2s ease-out;
+  text-align: center;
+}
+
+.feedback-container h2 {
+  text-align: center;
+  color: #4b5563;
+}
+
+.feedback-container p {
+  text-align: center;
+  color: #4b5563;
+}
+
+.feedback-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-container .card {
+  background-color: #fafafa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.feedback-container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+#email {
+  width: 96%;
+}
+
+/* Inputs (shared) */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  color: #111827;
+  background-color: #ffffff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #673ab7;
+  box-shadow: 0 0 10px rgba(103, 58, 183, 0.1);
+}
+
+.rating {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  align-items: center;
+  color: #374151;
+}
+
+/* Main action buttons: feedback submit, login, signup */
+button.submit-btn,
+.login-btn,
+.container-signup button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+}
+
+button.submit-btn {
+  background-color: #673ab7;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button.submit-btn:hover {
+  background-color: #4caf50;
+  transform: scale(1.02);
+}
+
+textarea {
+  resize: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ================================
+   LANDING PAGE (INDEX)
+================================ */
+
+.container-landing {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+/* Navbar alt (if used) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #673ab7;
+}
+
+.logo {
+  font-size: 24px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.nav-links a:hover {
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  background: linear-gradient(to right, #673ab7, #512da8);
+  color: rgb(216, 181, 181);
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  color: #ece2e2;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-content .btn-index {
+  background-color: #4caf50;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 5px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Features (landing) */
+.features-land {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.h1-land {
+  text-align: center;
+  font-size: 36px;
+  color: #853b3b;
+  margin: 20px 0 30px;
+}
+
+.service-item-land {
+  display: flex;
+  align-items: flex-start;
+  background-color: #162525;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #44d17a;
+  border-radius: 8px;
+}
+
+.service-number-land {
+  font-size: 36px;
+  font-weight: bold;
+  color: #44d17a;
+  margin-right: 20px;
+}
+
+.service-content-land {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-content-land h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.service-content-land p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #c5c5c5;
+}
+
+@media (max-width: 768px) {
+  .service-item-land {
+    flex-direction: column;
+  }
+  .service-number-land {
+    margin-bottom: 10px;
+  }
+}
+
+/* Steps / How it works */
+.steps-container {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #673ab7;
+  color: white;
+}
+
+.steps-container h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.step-card {
+  background-color: #512da8;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.step-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+}
+
+@media screen and (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .step-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* About / Feedback / Contact */
+.about-us {
+  background-color: #e6e1f2;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 32px;
+  color: #673ab7;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  font-size: 18px;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feedback {
+  background-color: #673ab7;
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+}
+
+.feedback h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.feedback p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.feedback .btn-index {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.contact-us {
+  background-color: #512da8;
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+}
+
+.contact-us a {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.contact-us a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Shared CTA button */
+.btn-index {
+  background-color: #4caf50;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 5px;
+}
+
+/* ================================
+   PROFILE PAGE
+================================ */
+
+.h1-profile {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.profile-section {
+  border: 1px solid #ccc;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  border-radius: 8px;
+  padding: 20px;
+  display: grid;
+  align-content: center;
+  width: 70%;
+}
+
+.profile-item,
+.icon-link {
+  margin-bottom: 15px;
+}
+
+.add-note-button,
+.plus {
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#pinn,
+#profile-code,
+#states,
+.role-dropdown {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#pinn,
+#profile-code,
+#states,
+.role-dropdown {
+  width: 30%;
+}
+
+#states:focus,
+.role-dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+#save-profile {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+#save-profile:hover {
+  background-color: #0056b3;
+}
+
+/* ID card */
+#id-card-section {
+  margin-top: 30px;
+}
+
+#id-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#edit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* ================================
+   REPORTS, BILLING, ETC.
+================================ */
+
+.billing-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.medicine-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.medicine-row input {
+  width: 130px;
+  text-align: center;
+}
+
+.medicine-row .total {
+  font-weight: bold;
+  color: #198754;
+}
+
+.medicine-row .remove-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-row .remove-btn:hover {
+  background-color: #a71d2a;
+}
+
+/* ================================
+   LOGIN PAGE
+================================ */
+
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.login-container {
+  width: 340px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-container input {
+  width: 92%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #6200ea;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.login-btn:hover {
+  background-color: #3700b3;
+}
+
+.login-role {
+  margin-top: 4px;
+}
+
+.error-msg {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ================================
+   REPORTS-PATIENT PAGE
+================================ */
+
+.charts-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.chart-box {
+  width: 45%;
+  margin-bottom: 20px;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.qna-container {
+  width: 1000px;
+  margin: 20px auto 70px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.question {
+  cursor: pointer;
+  background-color: #6200ea;
+  color: white;
+  padding: 15px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  margin: 10px 0;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.question:hover {
+  background-color: #3700b3;
+}
+
+.answer {
+  background-color: #f9f9f9;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 0 15px;
+}
+
+.answer p {
+  padding: 15px 0;
+  margin: 0;
+}
+
+.active {
+  max-height: 200px;
+}
+
+/* ================================
+   FIND THERAPIST PAGE
+================================ */
+
+.container-my-therapist {
+  justify-items: center;
+  margin-top: 40px;
+  background-color: #f4f4f4;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+#pincode {
+  width: 20%;
+}
+
+#doctorCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.doctor-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+}
+
+.doctor-card h3 {
+  margin-bottom: 10px;
+}
+
+.doctor-card p {
+  margin: 5px 0;
+}
+
+.doctor-card button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.doctor-card button:hover {
+  background-color: #0056b3;
+}
+
+.therapists-container {
+  width: 80%;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto 0;
+}
+
+/* ================================
+   SIGNUP PAGE
+================================ */
+
+.container-signup {
+  margin-top: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.container-signup .form-group {
+  margin-bottom: 15px;
+}
+
+.container-signup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.container-signup input,
+.container-signup select,
+.container-signup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container-signup input[type="file"] {
+  padding: 5px;
+}
+
+.container-signup textarea {
+  resize: vertical;
+}
+
+.hidden {
+  display: none;
+}
+
+.container-signup button {
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================================
+   APPOINTMENTS-THERAPIST PAGE
+================================ */
+
+.container-apnt {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.apnt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.apnt-table th,
+.apnt-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.apnt-table th {
+  background-color: #3c1258;
+  color: white;
+}
+
+.btn-release {
+  background-color: #f44336;
+}
+
+.btn-release:hover {
+  background-color: #d32f2f;
+}
+
+/* ================================
+   TOP RIGHT LOGIN / SIGNUP ON INDEX
+================================ */
+
+.top-header {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Common size for Login & Sign Up buttons */
+.nav-btn {
+  width: 110px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 14px;
+  border-radius: 22px;
+  font-weight: 500;
+  border: 2px solid #7b2cff;
+  color: white;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #7b2cff;
+  color: white;
+}
+
+.signup-btn {
+  background-color: #7b2cff;
+}
+
+.signup-btn:hover {
+  background-color: #5a1fbf;
+}
+
+/* Index layout helpers */
+section {
+  padding: 80px 8%;
+}
+
+.core-capabilities {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.core-capabilities h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.capability-card {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.split-box {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px;
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.workflow-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cta-section {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Scrolling logos (if used) */
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.scroll-container img {
+  display: inline-block;
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
+.hero-section {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+  padding: 60px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.scroll-auto {
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* ================================
+   TOP BAR PROFILE ICON + MINI MENU
+================================ */
+
+.top-profile-btn {
+  margin-left: auto;
+  margin-right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.top-profile-img {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Small bubble menu near the logo */
+.top-profile-menu {
+  position: absolute;
+  top: 75px;
+  right: 30px;
+  display: flex;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+  z-index: 1200;
+}
+
+.top-profile-menu.hidden {
+  display: none;
+}
+
+.top-profile-menu button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.top-profile-menu button:hover {
+  background-color: #e5e7eb;
+}
+
+/* red notification badge */
+.notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  border-radius: 999px;
+  padding: 1px 4px;
+}
+
+/* ================================
+   TOP-RIGHT USER PROFILE CARD
+================================ */
+
+.profile-card-wrapper {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.profile-card-wrapper.hidden {
+  display: none;
+}
+
+.profile-card {
+  width: 520px;
+  max-width: 90%;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.35);
+  padding: 20px 24px 18px;
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.profile-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.profile-close {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.profile-card-body {
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px 0;
+  margin-bottom: 14px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 8px 0;
+  color: #374151;
+}
+
+.profile-row span:first-child {
+  color: #6b7280;
+}
+
+.profile-card-footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.profile-primary-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.profile-primary-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.profile-secondary-link {
+  align-self: center;
+  font-size: 13px;
+  color: #6b7280;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Report</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* Flex container for the charts */
+      .charts-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .chart-box {
+        width: 45%;
+        margin-bottom: 20px;
+      }
+
+      canvas {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar-1">
+      <a href="/patient/profile">Profile</a>
+      <a href="/patient/find-therapist">Find Therapists</a>
+      <a href="/patient/appointments">My Appointments</a>
+      <a href="/patient/reports">My Reports</a>
+      <a href="/patient/exercises">My Exercises</a>
+      <a href="/feedback">Feedback</a>
+      <a href="/">Logout</a>
+    </div>
+
+    <h2>Therapy Progress Reports</h2>
+
+    <!-- Container for the charts, 2 graphs side by side -->
+    <div class="charts-container">
+      <!-- Line chart: Speech Progress -->
+      <div class="chart-box">
+        <h3>Speech Progress Over Time</h3>
+        <canvas id="speechProgress" width="400" height="400"></canvas>
+      </div>
+
+      <!-- Bar chart: Performance in Therapy Areas -->
+      <div class="chart-box">
+        <h3>Performance in Therapy Areas</h3>
+        <canvas id="therapyAreas" width="400" height="400"></canvas>
+      </div>
+    </div>
+
+    <div class="charts-container">
+      <!-- Radar chart: Holistic Patient Skills -->
+      <div class="chart-box">
+        <h3>Holistic View of Patient Skills</h3>
+        <canvas id="therapyRadar" width="400" height="400"></canvas>
+      </div>
+
+      <!-- Pie chart: Focus Areas in Therapy -->
+      <div class="chart-box">
+        <h3>Distribution of Focus Areas in Therapy</h3>
+        <canvas id="focusDistribution" width="400" height="400"></canvas>
+      </div>
+    </div>
+
+    <div class="qna-container">
+      <h2>Reports History</h2>
+      <button class="question" onclick="toggleAnswer(0)">Session 4</button>
+      <div class="answer">
+        <table>
+          <tr>
+            <th>Patient`s Name</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Session No.</th>
+            <th>Doctor`s Name</th>
+          </tr>
+          <tr>
+            <td>John Nolan</td>
+            <td>34</td>
+            <td>75 Kgs</td>
+            <td>4</td>
+            <td>Dr. Amir Patil</td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+              voluptate non sapiente sit nemo nulla unde nesciunt deserunt, quos
+              doloribus, in maiores ipsa neque expedita sed iure placeat porro
+              voluptas!
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="question" onclick="toggleAnswer(1)">Session 3</button>
+      <div class="answer">
+        <table>
+          <tr>
+            <th>Patient`s Name</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Session No.</th>
+            <th>Doctor`s Name</th>
+          </tr>
+          <tr>
+            <td>John Nolan</td>
+            <td>34</td>
+            <td>75 Kgs</td>
+            <td>4</td>
+            <td>Dr. Amir Patil</td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+              voluptate non sapiente sit nemo nulla unde nesciunt deserunt, quos
+              doloribus, in maiores ipsa neque expedita sed iure placeat porro
+              voluptas!
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="question" onclick="toggleAnswer(2)">Session 2</button>
+      <div class="answer">
+        <table>
+          <tr>
+            <th>Patient`s Name</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Session No.</th>
+            <th>Doctor`s Name</th>
+          </tr>
+          <tr>
+            <td>John Nolan</td>
+            <td>34</td>
+            <td>75 Kgs</td>
+            <td>4</td>
+            <td>Dr. Amir Patil</td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+              voluptate non sapiente sit nemo nulla unde nesciunt deserunt, quos
+              doloribus, in maiores ipsa neque expedita sed iure placeat porro
+              voluptas!
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="question" onclick="toggleAnswer(3)">Session 1</button>
+      <div class="answer">
+        <table>
+          <tr>
+            <th>Patient`s Name</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Session No.</th>
+            <th>Doctor`s Name</th>
+          </tr>
+          <tr>
+            <td>John Nolan</td>
+            <td>34</td>
+            <td>75 Kgs</td>
+            <td>4</td>
+            <td>Dr. Amir Patil</td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+              voluptate non sapiente sit nemo nulla unde nesciunt deserunt, quos
+              doloribus, in maiores ipsa neque expedita sed iure placeat porro
+              voluptas!
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="../static/js/graphs.js"></script>
+  </body>
+</html>
